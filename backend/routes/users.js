@@ -16,7 +16,8 @@ router.post('/sign-up', async function(req,res,next){
   
   if(!searchUser){
     var newUser = new userModel({
-      username: req.body.usernameFromFront,
+      name: req.body.nameFromFront,
+      firstname: req.body.firstnameFromFront,
       email: req.body.emailFromFront,
       password: req.body.passwordFromFront,
     })
@@ -24,7 +25,8 @@ router.post('/sign-up', async function(req,res,next){
     var newUserSave = await newUser.save();
   
     req.session.user = {
-      name: newUserSave.username,
+      name: newUserSave.name,
+      firstname: newUserSave.firstname,
       id: newUserSave._id,
     }
   
@@ -48,15 +50,23 @@ router.post('/sign-in', async function(req,res,next){
 
   if(searchUser!= null){
     req.session.user = {
-      name: searchUser.username,
+      name: searchUser.name,
+      firstname: searchUser.firstname,
       id: searchUser._id
     }
     res.redirect('/')
   } else {
-    res.render('')
+    res.render('/')
   }
 
   
+})
+
+router.get('/logout', function(req,res,next){
+
+  req.session.user = null;
+
+  res.redirect('/')
 })
 
 module.exports = router;
