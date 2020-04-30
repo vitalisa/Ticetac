@@ -30,6 +30,7 @@ router.get('/search', async function(req, res, next) {
 
 /* Search POST traitement avec date. */
 router.post('/search-trajet', async function(req, res, next) {
+  // creation de la variable de session des trajets
   req.session.trajets = await journeyModel.findOne({departure:req.body.depart} && {arrival:req.body.arrivee} && {date:req.body.date});
   console.log(trajets);
   res.redirect('/result');
@@ -37,7 +38,7 @@ router.post('/search-trajet', async function(req, res, next) {
 
 /* GET Results. */
 router.get('/result', function(req, res, next) {
-  //initialisation du tableau des tickets
+  //initialisation de la variable tableau des tickets qui stocke les trajets validés par le user
   req.session.tickets = [];
   res.render('result', {trajets:req.session.trajets});
 });
@@ -50,9 +51,14 @@ router.get('/my-tickets', async function(req, res, next) {
 
 /* GET Confirm Tickets */
 router.get('/confirm-tickets', async function(req, res, next) {
-  displayConfirmation = true;
+  displayConfirmation = true; // variable pour préparer l'affichage de la popup
+
+  //à la confirmation ajouter les infos des billettes achetés dans le sous-doc du Uuser
   await userModel.updateOne({_id:req.sessionuser.id}, {$push:{billets:req.session.tickets}});
+
+  //render
   res.render('tickets', {displayConfirmation});
+  // changement de la variable d'affichage pour éviter qu'elle ne s'affiche à chaque fois
   displayConfirmation = false;
 });
 
