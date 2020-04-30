@@ -13,7 +13,7 @@ var userSchema =  mongoose.Schema({
     prenom:String,
     email:String,
     password:String,
-    billet:[billetSchema],
+    billets:[billetSchema],
 });
 
 var userModel = mongoose.model('user',userSchema);
