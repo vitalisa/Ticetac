@@ -1,8 +1,46 @@
 body {
-  padding: 50px;
+  padding: 0 0px 50px 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7db9e8+6,7db9e8+6,1e5799+94 */
+  background: #7db9e8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #7db9e8 6%, #7db9e8 6%, #1e5799 94%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #7db9e8 6%,#7db9e8 6%,#1e5799 94%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #7db9e8 6%,#7db9e8 6%,#1e5799 94%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */  
+  height: 100vh;
 }
+
 
 a {
   color: #00B7FF;
+}
+
+footer{
+color: white;
+
+}
+#content{
+  padding-top: 50px;
+  height: 85%;
+  
+}
+#header-content{
+  background-color: #f8f9fa;
+  height: 100px;
+}
+
+
+.align-header, #list-menu-header{
+  padding-top: 40px;
+}
+#list-menu-header .active{
+  color:red;
+}
+
+#header-image{
+  padding: 10px;
+  height: 75%;
+}
+.title-form{
+  color:white;
 }
