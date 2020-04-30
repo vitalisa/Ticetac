@@ -64,9 +64,9 @@ router.get('/confirm-tickets', async function(req, res, next) {
 
 /* GET My Trips Pages. */
 router.get('/my-trips', async function(req, res, next) {
-  var user = await userModel.findById(req.session.user.id);
-  var trips = user.billets;
-  res.render('trips', {trips});
+  // var user = await userModel.findById(req.session.user.id);
+  // var trips = user.billets;
+  res.render('trips');
 });
 
 

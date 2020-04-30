@@ -49,4 +49,15 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+// locals function
+app.locals.dateFormat = function(date){
+  var date = new Date(date);
+  var formatDate = date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
+  if (formatDate.length<10) {
+    return '0'+formatDate;
+  };
+  return formatDate;
+};
+
 module.exports = app;
