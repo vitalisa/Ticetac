@@ -11,7 +11,10 @@ var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 
 
 /* GET search page. */
-router.get('/search', function(req, res, next) {
+router.get('/search', async function(req, res, next) {
+
+  var journey = await journeyModel.find();
+
   res.render('search', { title: 'Express' });
 });
 

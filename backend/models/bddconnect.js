@@ -8,7 +8,7 @@ var options = {
  };
 
 // --------------------- BDD -----------------------------------------------------
-mongoose.connect('mongodb+srv://admin:4OHJpnCvxMIWQxnZ@cluster0-ifxkn.mongodb.net/Ticketac?retryWrites=true',
+mongoose.connect('mongodb+srv://ticketac:IxXJ3tqqcFdewLHW@cluster0-ifxkn.mongodb.net/Ticketac?retryWrites=true',
    options,
    function(err) {
     if (err) {
