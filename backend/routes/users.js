@@ -16,8 +16,8 @@ router.post('/sign-up', async function(req,res,next){
   
   if(!searchUser){
     var newUser = new userModel({
-      name: req.body.nameFromFront,
-      firstname: req.body.firstnameFromFront,
+      nom: req.body.nomFromFront,
+      prenom: req.body.prenomFromFront,
       email: req.body.emailFromFront,
       password: req.body.passwordFromFront,
     })
@@ -25,14 +25,14 @@ router.post('/sign-up', async function(req,res,next){
     var newUserSave = await newUser.save();
   
     req.session.user = {
-      name: newUserSave.name,
-      firstname: newUserSave.firstname,
+      nom: newUserSave.nom,
+      prenom: newUserSave.prenom,
       id: newUserSave._id,
     }
   
     console.log(req.session.user)
   
-    res.redirect('/')
+    res.redirect('/search')
   } else {
     res.redirect('/')
   }
@@ -50,17 +50,19 @@ router.post('/sign-in', async function(req,res,next){
 
   if(searchUser!= null){
     req.session.user = {
-      name: searchUser.name,
-      firstname: searchUser.firstname,
+      nom: searchUser.nom,
+      prenom: searchUser.prenom,
       id: searchUser._id
     }
-    res.redirect('/')
+    res.redirect('/search')
   } else {
     res.render('/')
   }
 
   
 })
+
+/* GET Logout */
 
 router.get('/logout', function(req,res,next){
 
