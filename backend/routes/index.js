@@ -15,7 +15,10 @@ router.get('/search', function(req, res, next) {
   res.render('search', { title: 'Express' });
 });
 
-
+/* Get Home page */
+router.get('/', function(req, res, next){
+  res.render('login')
+})
 
 
 module.exports = router;

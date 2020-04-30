@@ -32,7 +32,7 @@ router.post('/sign-up', async function(req,res,next){
   
     console.log(req.session.user)
   
-    res.redirect('/')
+    res.redirect('/search')
   } else {
     res.redirect('/')
   }
@@ -54,13 +54,15 @@ router.post('/sign-in', async function(req,res,next){
       prenom: searchUser.prenom,
       id: searchUser._id
     }
-    res.redirect('/')
+    res.redirect('/search')
   } else {
     res.render('/')
   }
 
   
 })
+
+/* GET Logout */
 
 router.get('/logout', function(req,res,next){
 
