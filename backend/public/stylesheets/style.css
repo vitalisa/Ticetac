@@ -1,24 +1,39 @@
 body {
   padding: 0 0px 50px 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7db9e8+6,7db9e8+6,1e5799+94 */
-  background: #7db9e8; /* Old browsers */
-  background: -moz-linear-gradient(top,  #7db9e8 6%, #7db9e8 6%, #1e5799 94%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #7db9e8 6%,#7db9e8 6%,#1e5799 94%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #7db9e8 6%,#7db9e8 6%,#1e5799 94%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */  
+  font: 14px  Helvetica, Arial, sans-serif;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c5dee8+0,2d7fb3+100 */
+  background: rgb(197,222,232); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(197,222,232,1) 0%, rgba(45,127,179,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(197,222,232,1) 0%,rgba(45,127,179,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(197,222,232,1) 0%,rgba(45,127,179,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5dee8', endColorstr='#2d7fb3',GradientType=0 ); /* IE6-9 */
   height: 100vh;
 }
 
+.container {
+  height: 75%;
+  width: 60%;
+  margin-top: 50px;
+}
+
+.container-title {
+  justify-content: left;
+  padding-left: 20px;
+  color: white;
+}
 
 a {
   color: #00B7FF;
 }
 
 footer{
-color: white;
-
+  color: rgba(255,255,255,.7);
 }
+
+h1 {
+  font-size: 1.8rem;
+}
+
 #content{
   padding-top: 50px;
   height: 85%;
@@ -26,21 +41,50 @@ color: white;
 }
 #header-content{
   background-color: #f8f9fa;
-  height: 100px;
+  height: 50px;
+  justify-content: space-between;
 }
 
 
-.align-header, #list-menu-header{
+/* .align-header, #list-menu-header{
   padding-top: 40px;
-}
+} */
+
 #list-menu-header .active{
   color:red;
 }
 
 #header-image{
   padding: 10px;
-  height: 75%;
+  height: 50px;
 }
 .title-form{
   color:white;
+}
+
+.result-card {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.result-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.list-group {
+  width:100%;
+  margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  background: white;
+}
+
+.table thead th, .table td {
+  vertical-align: bottom;
+  border-top: 0px;
+  border-bottom: 0px;
 }
