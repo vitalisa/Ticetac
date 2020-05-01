@@ -29,6 +29,10 @@ color: white;
   height: 100px;
 }
 
+.landmark{
+width: 15%;
+display:block;
+}
 
 .align-header, #list-menu-header{
   padding-top: 40px;
